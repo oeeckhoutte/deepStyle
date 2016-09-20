@@ -15,7 +15,7 @@ RUN \
   apt-get install -y software-properties-common && \
   apt-get install -y byobu curl git htop man unzip vim wget
 
-RUN rm -rf /var/lib/apt/lists/*
+#RUN rm -rf /var/lib/apt/lists/*
 
 # Add files.
 ADD root/.bashrc /root/.bashrc
@@ -46,11 +46,11 @@ RUN \
 
 RUN \
   mkdir DeepStyle && \
-  cd Deepstyle && \
+  cd DeepStyle && \
   git clone https://github.com/jcjohnson/neural-style.git && \
   cd neural-style && \
-  sh models/download_models.sh && \
-  th neural_style.lua -style_image ./examples/inputs/starry_night.jpg -content_image ./examples/inputs/brad_pitt.jpg -gpu -1
+  sh models/download_models.sh
+
 
 # Define default command.
 CMD ["bash"]

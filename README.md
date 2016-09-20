@@ -19,4 +19,8 @@ Work in progress...
 
 ### Usage
 
-    docker run -it --rm oeeckhoutte/deepStyle
+    docker run -i -t --rm oeeckhoutte/deepStyle
+
+    $ cd ./DeepStyle/neural-style
+    $ th neural_style.lua -style_image ./examples/inputs/starry_night.jpg -content_image ./examples/inputs/brad_pitt.jpg  -gpu -1 -print_iter 1
+
